@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ResponsiveImage, ResponsiveImageSize } from "react-responsive-image";
 
+// big container grey
 const Container = styled.div`
   max-width: 1400px;
   border: 1px solid #ccc;
@@ -10,8 +11,9 @@ const Container = styled.div`
   padding: 10px;
 `;
 
+// * smaller container blue
+// * it says its position
 const Wrapper = styled.div`
-  margin-top: 10px;
   display: flex;
   width: 100%;
   border: 1px solid blue;
@@ -22,14 +24,16 @@ const Wrapper = styled.div`
   }
 `;
 
+// * individual element has full width in mobile mode
 const InputDiv = styled.div`
   width: 45%;
-  border: 1px solid black;
+  border: 1px solid red;
   @media (max-width: 1200px) {
     width: 100%;
   }
 `;
 
+// * individual element has full width in mobile mode
 const IntroDiv = styled.div`
   width: 45%;
   border: 1px solid red;
@@ -38,20 +42,41 @@ const IntroDiv = styled.div`
   }
 `;
 
+// * this one cross up
+// * green border
 const PlaceDiv = styled.div`
+  margin-top: -10rem;
   width: 45%;
-  border: 1px solid red;
+  border: 1px solid green;
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin-top: 0px;
+  }
+`;
+
+// * green border
+const ImgDiv = styled.div`
+  width: 45%;
+  border: 1px solid green;
   @media (max-width: 1200px) {
     width: 100%;
   }
 `;
 
-const ImgDiv = styled.div`
+// * this one cross up
+// * orange border
+const OtherDiv = styled.div`
+  margin-top: -43rem;
   width: 45%;
-  border: 1px solid red;
+  border: 1px solid orange;
   @media (max-width: 1200px) {
     width: 100%;
+    margin-top: 0;
   }
+`;
+
+const OtherDivWrapper = styled.div`
+  margin-bottom: 10px;
 `;
 
 function App() {
@@ -94,7 +119,6 @@ function App() {
           </PlaceDiv>
           <ImgDiv>
             <h5>ref image</h5>
-
             <ResponsiveImage>
               <ResponsiveImageSize
                 default
@@ -111,6 +135,19 @@ function App() {
               />
             </ResponsiveImage>
           </ImgDiv>
+        </Wrapper>
+        <Wrapper>
+          <OtherDiv>
+            <OtherDivWrapper>
+              <input value="input box 2" onChange={() => {}} />
+            </OtherDivWrapper>
+            <OtherDivWrapper>
+              <input value="input box 3 " onChange={() => {}} />
+            </OtherDivWrapper>
+            <OtherDivWrapper>
+              <input value="input box 4" onChange={() => {}} />
+            </OtherDivWrapper>
+          </OtherDiv>
         </Wrapper>
       </Container>
     </div>
