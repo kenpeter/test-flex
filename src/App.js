@@ -6,8 +6,6 @@ import { ResponsiveImage, ResponsiveImageSize } from "react-responsive-image";
 const Container = styled.div`
   max-width: 1400px;
   border: 1px solid #ccc;
-  display: flex;
-  flex-direction: column;
   padding: 10px;
 `;
 
@@ -17,13 +15,16 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   border: 1px solid blue;
+  // full screen mode, space
   justify-content: space-between;
 
+  // mobile mode, column
   @media (max-width: 1200px) {
     flex-direction: column;
   }
 `;
 
+// * each element will full screen mode / mobile mode
 // * individual element has full width in mobile mode
 const InputDiv = styled.div`
   width: 45%;
