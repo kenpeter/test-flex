@@ -10,12 +10,12 @@ function server() {
   server.use(cors());
   server.use(bodyParser.json());
 
-  server.get("/api/detail/:personId", (req, res) => {
-    const data = require("./person.json");
+  server.get("/detail", (req, res) => {
+    const data = require("./detail.json");
     res.status(200).jsonp(data);
   });
 
-  server.post("/api/agree", (req, res) => {
+  server.post("/agree", (req, res) => {
     try {
       const agree = req.body.agree;
       const filePath = path.resolve(__dirname, "./agree.json");

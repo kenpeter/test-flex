@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "cors": "^2.8.5",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
@@ -14,6 +15,8 @@
     "styled-components": "^5.0.1"
   },
   "scripts": {
+    "all": "concurrently --kill-others \"npm run mock\" \"npm start\"",
+    "mock": "nodemon src/backend/index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
