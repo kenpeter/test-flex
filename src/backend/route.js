@@ -22,7 +22,10 @@ function server() {
       let data = JSON.parse(fs.readFileSync(filePath));
       data.agree = agree;
 
+      // * If I remove it or change it to a delay loop, no net work err
+      // * fs.writeSync or fs.writeFileSync network cause err
       fs.writeFileSync(filePath, JSON.stringify(data));
+
       res.status(200).jsonp({ success: true });
     } catch (error) {
       throw new Error("error", error);
